@@ -1,7 +1,10 @@
 // Dependencies & variables
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const PORT = 8000;
+
+app.use(cors());
 
 // Object to serve
 const rappers = {
@@ -57,6 +60,11 @@ app.get('/api/:name', (request, response)=>{
 
 
 // Set up server to listen on the PORT
-app.listen(PORT, _=>{
+app.listen(proceess.env.PORT || PORT, _=>{
   console.log(`The server is running on port ${PORT}. Betta go catch it!`);
 })
+
+
+
+// PUT A README on the git repo to tell how to do npm install and start the server (alex ortega readme template)
+//login to heroku
