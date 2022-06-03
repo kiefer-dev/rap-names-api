@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const PORT = 8000;
+let PORT = process.env.PORT || 8000;
 
 app.use(cors());
 
@@ -60,7 +60,7 @@ app.get('/api/:name', (request, response)=>{
 
 
 // Set up server to listen on the PORT
-app.listen(proceess.env.PORT || PORT, _=>{
+app.listen(PORT, _=>{
   console.log(`The server is running on port ${PORT}. Betta go catch it!`);
 })
 
